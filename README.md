@@ -1,6 +1,6 @@
 # *pyDWS* - Expanding the reach of diffusing wave spectroscopy and tracer bead microrheology
 
-Welcome to the repository for [pyDWS](path), a Python package implementing the two-cell Echo diffusing wave spectroscopy (DWS) scheme.
+Welcome to the repository for [pyDWS](https://github.com/ManuelH26/pyDWS), a Python package implementing the two-cell Echo diffusing wave spectroscopy (DWS) scheme.
 
 This package provides:
 
@@ -12,7 +12,7 @@ This package provides:
 
 pyDWS is based on:
 
-> **M. Helfer, C. Zhang, and F. Scheffold, "Expanding the reach of diffusing wave spectroscopy and tracer bead microrheology," *arXiv*:2502.14973 (2025), https://doi.org/10.48550/arXiv.2502.14973.**
+> **M. Helfer, C. Zhang, and F. Scheffold, "Expanding the reach of diffusing wave spectroscopy and tracer bead microrheology," *arXiv*:2502.14973 (2025), [https://doi.org/10.48550/arXiv.2502.14973](https://doi.org/10.48550/arXiv.2502.14973).**
 
 ## Introduction
 
@@ -35,7 +35,7 @@ This package is compatible with **Python ≥ 3.10** and depends on the following
 - `pandas >= 2.3.1`  
 - `scikit-learn >= 1.7.1`  
 - `scipy >= 1.16.1`  
-- `statsmodels >= 0.14.5` 
+- `statsmodels >= 0.14.5`
 
 ## Installation
 
@@ -47,15 +47,15 @@ pip install pyDWS
 
 ## Examples
 
-We provide example workflows for wormlike micellar and microgel samples via Jupyter notebooks in the [examples](path) folder, illustrating how this package can be used.
+We provide example workflows for wormlike micellar and microgel samples via Jupyter notebooks in the [examples](./examples/) folder, illustrating how this package can be used.
 
-The example datasets are available in the [data](path) folder. All measurements were performed using the following setup:  
+The example datasets are available in the [data](./examples/data/) folder. All measurements were performed using the following setup:  
 ![DWS Setup](images/DWS-SetUp.svg)
 
 From the intensity fluctuations, the correlator outputs the intensity correlation function (ICF), $g_2(t) - 1$.  
 The two-cell measurements were performed at a frequency of 13 $mHz$, and the echo measurements at 25 $Hz$, both with an amplitude of 3 $V_{\text{rms}}$. The actual frequency during the Echo measurement is 24.9997 $Hz$, which is slightly lower than the set frequency because of the inertia of the oscillator.
 
-- [**Wormlike micellar sample:**](path)
+- [**Wormlike micellar sample:**](./examples/dws_micelle.ipynb)
   
     | Parameters | Values |
     | ----------- | ----------- |
@@ -69,7 +69,7 @@ The two-cell measurements were performed at a frequency of 13 $mHz$, and the ech
     | $\rho$ (medium density) | 1000 $\frac{kg}{m^3}$ (water)|
     | $T$  | 20 $\degree C$|
 
-- [**Microgel sample:**](path)
+- [**Microgel sample:**](./examples/dws_microgel.ipynb)
   
     | Parameters | Values |
     | ----------- | ----------- |
