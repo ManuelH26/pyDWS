@@ -1,0 +1,11 @@
+# Ignore spyder Project
+.spyproject/
+
+# Ignore build/output folders
+dist/
+build/
+pyDWS.egg-info/
+
+# Ignore Jupyter notebook checkpoints
+examples/.ipynb_checkpoints
+
