@@ -58,14 +58,20 @@ def plot_layout(fig, ax, logX, logY, xlabel, ylabel, title=None):
             
     if data_xlim[0] - padding_x < 0:
         xmin = 10**np.floor(np.log10(data_xlim[0]))
-        ax.set_xlim(xmin, data_xlim[1] + padding_x)
+        try:
+            ax.set_xlim(xmin, data_xlim[1] + padding_x)
+        except ValueError:
+            print("Warning: Could not set x-limits (NaN/inf in data)")
     else:    
         ax.set_xlim(data_xlim[0] - padding_x, data_xlim[1] + padding_x)
     
     if logY == True:
         if data_ylim[0] - padding_y < 0:
             ymin = 10**np.floor(np.log10(data_ylim[0]))
-            ax.set_ylim(ymin, data_ylim[1] + padding_y)
+            try:
+                ax.set_ylim(ymin, data_ylim[1] + padding_y)
+            except ValueError:
+                print("Warning: Could not set y-limits (NaN/inf in data)")
         else:    
             ax.set_ylim(data_ylim[0] - padding_y, data_ylim[1] + padding_y)
     else:
