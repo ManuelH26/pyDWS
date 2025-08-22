@@ -77,9 +77,9 @@ The two-cell measurements were performed at a frequency of 13 mHz, and the echo 
   
     | Parameters | Values |
     | ----------- | ----------- |
-    | Sample | pNIPAM microgel in MilliQ water with 5 mol% crosslinker BIS|
+    | Sample | pNIPAM microgel in MilliQ water with 1.5 mol% crosslinker BIS|
     | φ | ~18 wt% |
-    | l* | 325 μm |
+    | l* | 157 μm |
     | n_water | 1.33 |
     | λ | 633 nm |
     | L (Cuvette thickness) | 5 mm |

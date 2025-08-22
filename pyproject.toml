@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyDWS"
-version = "0.4.1"
+version = "0.4.2"
 description = "A Python package for the analysis of Diffusing Wave Spectroscopy and tracer bead microrheology data."
 authors = [
     { name="M. Helfer, C. Zhang, and F. Scheffold", email="frank.scheffold@unifr.ch" }
