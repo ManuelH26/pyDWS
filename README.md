@@ -34,11 +34,11 @@ Building on this approach, we also demonstrate that a stable correction for bead
 
 This package is compatible with **Python ≥ 3.10** and depends on the following libraries:
 
-- `matplotlib >= 3.10.5`  
-- `numpy >= 2.3.2`  
-- `pandas >= 2.3.1`  
-- `scikit-learn >= 1.7.1`  
-- `scipy >= 1.16.1`  
+- `matplotlib >= 3.4.3`  
+- `numpy >= 1.21.0`  
+- `pandas >= 1.3.0`  
+- `scikit-learn >= 1.0.0`  
+- `scipy >= 1.7.0`  
 - `statsmodels >= 0.14.5`
 
 ## Installation
