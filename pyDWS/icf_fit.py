@@ -110,7 +110,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
     
         numberInter +=1
         
-        result = minimize(_objective, P_current, method='Nelder-Mead', options={'maxiter': iteration_step, 'disp': False})
+        result = minimize(_objective, P_current, method='Nelder-Mead', options={'xatol': 1e-10, 'fatol': 1e-10, 'maxiter': iteration_step, 'disp': False})
     
         P_current = result.x
         total_iterations = result.nit
@@ -128,7 +128,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
         np.save(guess_path, P_current)
         
     # Calculating Intercpt
-    intercept = np.sum(P_current**2)
+    intercept = np.sum(np.abs(P_current))**2
 
 
     # generate time array as for multitau measurement
@@ -185,7 +185,7 @@ def _ICFfitMin(t, g2, alp, P, ifweight=False):
     f2 = np.zeros_like(t)
     
     for i in range(len(t)):
-        ICFfit[i] = np.sum(P**2 * np.exp(-t[i]/alp)**2)
+        ICFfit[i] = np.sum(np.abs(P) * np.exp(-t[i]/alp))**2
         f2[i] = np.sum(ICFfit[i] / alp**2)
     
     residual = ICFfit - g2
@@ -206,7 +206,7 @@ def _ICFfit(t, g2, alp, P):
     f2 = np.zeros_like(t)
     
     for i in range(len(t)):
-        ICFfit[i] = np.sum(P**2 * np.exp(-t[i]/alp)**2)
+        ICFfit[i] = np.sum(np.abs(P) * np.exp(-t[i]/alp))**2
         f2[i] = np.sum(ICFfit[i] / alp**2)
     
     
