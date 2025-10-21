@@ -13,7 +13,7 @@ from pyDWS.plots import plot_layout
 from pyDWS.utils import generate_time_array
 
 
-def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, max_iterations=400, iteration_step = 100000, PathPguess= None, icfFitPath=None, savePlots=None):
+def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, max_iterations=400, iteration_step = 100000, max_funVal = 0.000006, PathPguess= None, icfFitPath=None, savePlots=None):
     """
     Fitting icf with a intercept-adjusted exponential spectrum fit
 
@@ -30,7 +30,9 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
     max_iterations : int, optional
         The minimization must converge under max_iterations. The default is 400.
     iteration_step : int, optional
-        How many interations the minimization does in one minimization loop. The default is 10000.
+        How many interations the minimization does in one minimization loop. The default is 100000.
+    max_funVal : float, optional
+        If the function value of the minimization is below max_funVal the minimization stops. The default is 0.000006
     PathPguess : string, optional
         Paht to save the optimized P values. The default is None.
     icfFitPath : string, optional
@@ -97,6 +99,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
     total_iterations = 10000
     history = [P_current.copy()]
     functionVal = []
+    fVal = 1
 
     numberInter = 0
 
@@ -106,7 +109,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
 
 
     # minimize objectiv function 
-    while not converged or (total_iterations > max_iterations):
+    while not converged or (total_iterations > max_iterations) or (fVal > max_funVal):
     
         numberInter +=1
         
@@ -119,6 +122,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
         # P_current = P_new
         converged = result.success
         functionVal.append(result.fun)
+        fVal = result.fun
         
         
     
