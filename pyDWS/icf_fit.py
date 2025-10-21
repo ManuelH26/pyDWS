@@ -99,7 +99,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
     total_iterations = 10000
     history = [P_current.copy()]
     functionVal = []
-    fVal = 1
+    fVal = np.inf
 
     numberInter = 0
 
@@ -109,7 +109,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
 
 
     # minimize objectiv function 
-    while not converged or (total_iterations > max_iterations) or (fVal > max_funVal):
+    while not (converged and ((total_iterations < max_iterations) or (fVal < max_funVal))):
     
         numberInter +=1
         
