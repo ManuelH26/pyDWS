@@ -13,7 +13,7 @@ from pyDWS.plots import plot_layout
 from pyDWS.utils import generate_time_array
 
 
-def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, max_iterations=400, iteration_step = 10000, PathPguess= None, icfFitPath=None, savePlots=None):
+def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, max_iterations=400, iteration_step = 100000, PathPguess= None, icfFitPath=None, savePlots=None):
     """
     Fitting icf with a intercept-adjusted exponential spectrum fit
 
@@ -110,7 +110,7 @@ def icf_fit(data, name, alphaRange=np.arange(0, 22.5, 1.5), plateauVal=False, ma
     
         numberInter +=1
         
-        result = minimize(_objective, P_current, method='Nelder-Mead', options={'xatol': 1e-10, 'fatol': 1e-10, 'maxiter': iteration_step, 'disp': False})
+        result = minimize(_objective, P_current, method='Nelder-Mead', options={'xatol': 1e-10, 'fatol': 1e-10, 'maxiter': iteration_step, 'disp': True})
     
         P_current = result.x
         total_iterations = result.nit
