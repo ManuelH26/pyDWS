@@ -16,7 +16,7 @@ This package provides:
 
 pyDWS is based on:
 
-> **M. Helfer, C. Zhang, and F. Scheffold, "Expanding the reach of diffusing wave spectroscopy and tracer bead microrheology," *arXiv*:2502.14973 (2025), [https://doi.org/10.48550/arXiv.2502.14973](https://doi.org/10.48550/arXiv.2502.14973).**
+> **M. Helfer, C. Zhang, and F. Scheffold, "Expanding the reach of diffusing wave spectroscopy and tracer bead microrheology," *arXiv*:2502.14973 (2025), [https://doi.org/10.1103/k34t-ghws](https://doi.org/10.1103/k34t-ghws).**
 
 ## Introduction
 
@@ -94,5 +94,5 @@ If you use **pyDWS** in your research, please cite:
 
 > M. Helfer, C. Zhang, and F. Scheffold,  
 > *"Expanding the reach of diffusing wave spectroscopy and tracer bead microrheology,"*  
-> arXiv:2502.14973 (2025).  
-> [https://doi.org/10.48550/arXiv.2502.14973](https://doi.org/10.48550/arXiv.2502.14973)
+> Phys. Rev. Research 7, 043274 (2025).  
+> [https://doi.org/10.1103/k34t-ghws](https://doi.org/10.1103/k34t-ghws)
